@@ -8,6 +8,9 @@ var methodOverride = require('method-override');
 // server setup ==============================================================
 var app = express();
 
+// Serve static content 
+app.use(express.static("public"));
+
 // Sets an initial port. We"ll use this later in our listener
 var PORT = process.env.PORT || 3000;
 
