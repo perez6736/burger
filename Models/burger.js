@@ -6,9 +6,14 @@ var orm = require("../config/orm.js");
 
 var burger = {
 
-    all: // get all burger
-    create: // create a burger
-    update: // update existing burger
-    delete: // delete a burger. 
+    all: function(cb){
+        orm.all("burgers", function(res){
+            cb(res);
+        });
+    }
+    
+    // create: // create a burger
+    // update: // update existing burger
+    // delete: // delete a burger. 
 
 }
