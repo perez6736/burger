@@ -17,3 +17,5 @@ var burger = {
     // delete: // delete a burger. 
 
 }
+
+module.exports = burger;
