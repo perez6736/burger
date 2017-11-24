@@ -8,15 +8,26 @@ $(function () {
             burgerName: newBurger
         }
 
-        $.ajax("/api/burgers", {
-            type: "POST",
-            data: burgerObj
-        }).then(
-            function(res){
-                console.log("new burger was added. ");
-                location.reload();
-            }
-        );
+        if(newBurger === ""){
+            //$("#error").show();
+            //$("#error").html("Please enter a burger.");
+            console.log("please enter a burger");
+
+            //why does the page refresh here ?? 
+        }
+        else{
+            $("#error").hide();
+
+            $.ajax("/api/burgers", {
+                type: "POST",
+                data: burgerObj
+            }).then(
+                function(res){
+                    console.log("new burger was added. ");
+                    location.reload();
+                }
+            );
+        } 
     });
 
 
@@ -39,10 +50,5 @@ $(function () {
             }
         );
 
-    })
-        
-
-
-
-
+    });
 });

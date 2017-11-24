@@ -1,0 +1,54 @@
+body{
+    background-color: rgb(226, 226, 112);
+}
+
+.container-body{
+    margin-top: 25px;
+}
+
+.burger-img{
+    margin: auto;
+    display: block;
+    height: 200px;
+    margin-bottom: 20px
+}
+
+.title{
+    color: rgb(255, 0, 0);
+    font-size: 30px;
+    text-align: center;
+}
+
+#instructions{
+    text-align: center;
+}
+
+#new-burger-form{
+    text-align: center;
+}
+
+#newBurger{
+    margin-bottom: 15px;
+}
+
+.newBurgers{
+    margin-top: 100px;
+}
+
+.newBurgers li {
+    width: 100%;
+    float: right;
+}
+
+.devouredBurgers{
+    margin-top: 100px;
+}
+
+.devour{
+    width: 100px;
+}
+
+.burgers{
+    margin-bottom: 10px;
+}
+

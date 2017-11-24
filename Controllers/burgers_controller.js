@@ -6,7 +6,7 @@ var burger = require("../models/burger.js");
 
 // Routes ==========================================================
 
-// 
+// this will happen on page load and put the burgers to the handlebar page. 
 router.get("/", function(req, res){
     burger.all(function(data){
          var allObj = {
@@ -18,6 +18,7 @@ router.get("/", function(req, res){
 
 });
 
+// this will happen when the user creates a burger. 
 router.post("/api/burgers", function(req, res){
     burger.create([
         "burger_name", "devoured"
