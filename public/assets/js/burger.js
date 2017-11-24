@@ -18,6 +18,14 @@ $(function () {
             }
         );
     });
+
+
+    $(".devour").on("click", function(){
+        // id of the cat which i made the data attr 
+        var id = $(this).data("id");
+        
+        
+    })
         
 
 
