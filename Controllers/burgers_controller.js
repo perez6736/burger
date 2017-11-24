@@ -11,12 +11,23 @@ var burger = require("../models/burger.js");
 router.get("/", function(req, res){
     burger.all(function(data){
          var allObj = {
-             burgers: "testing initial route"
+             burgers: data
          };
         console.log(data);
-        res.render("index", {burgers: "testing"});
+        res.render("index", allObj);
     });
 
+});
+
+router.post("/api/create", function(req, res){
+    burger.create([
+        "burger_name", "devoured"
+    ],
+    [
+        req.body.name, 0
+    ], function(result){
+    res.json({id: result.insertId});
+    });
 });
 
 module.exports = router;

@@ -1,12 +1,16 @@
 
-<div>
-    {{burgers}}
-</div>
+<ul>
+    {{#each burgers}}
+       <li>{{id}}. {{burger_name}}</li> 
+    {{/each}}
+</ul>
 
-<input>
+
+
+<input id="newBurger">
     Burger: 
 </input>
 
-<button type="button">
+<button type="button" id="submit">
     Submit
 </button>
