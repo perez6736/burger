@@ -3,11 +3,16 @@ var mysql      = require('mysql');
 
 // DB connection =====================================
 
+var host = process.env.DBHOST || "localhost";
+var db = process.env.DB-DATABASE || "burgers_db";
+var username = process.env.USERNAME || "root";
+var pw = process.env.PW || "mysqlppw123"
+
 var connection = mysql.createConnection({
-    host     : 'localhost',
-    user     : 'root',
-    password : 'mysqlppw123',
-    database : 'burgers_db'
+    host     : host,
+    user     : username,
+    password : pw,
+    database : db
   });
 
 // Make connection.
