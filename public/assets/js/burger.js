@@ -8,11 +8,11 @@ $(function () {
             burgerName: newBurger
         }
 
-        $.ajax("/api/create", {
+        $.ajax("/api/burgers", {
             type: "POST",
             data: burgerObj
         }).then(
-            function(){
+            function(res){
                 console.log("new burger was added. ");
                 location.reload();
             }

@@ -1,10 +1,25 @@
 
-<ul>
+<ol class="newBurgers">
     {{#each burgers}}
-       <li>{{id}}. {{burger_name}}</li> 
+        {{#unless devoured}}
+            <li> {{burger_name}} 
+                <button class="devour" data-id="{{id}}" data-devoured="{{devoured}}">
+		            Devour
+	            </button>
+            </li>
+        {{/unless}}
     {{/each}}
-</ul>
+</ol>
 
+<ol class="devouredBurgers">
+    {{#each burgers}}
+        {{#if devoured}}
+            <li> 
+                {{burger_name}} 
+            </li>
+        {{/if}}
+    {{/each}}
+</ol>
 
 
 <input id="newBurger" value="this is value">
@@ -14,9 +29,3 @@
 <button type="submit" id="submit">
     Submit
 </button>
-
-<script>
-    $("#sumbit").on("click", function (){
-        console.log("helloe");
-    })
-</script>
