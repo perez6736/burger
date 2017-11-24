@@ -1,26 +1,26 @@
-console.log($("#sumbit"));
 
-$("#sumbit").on("click", function(){
+$(function () {
 
-    // grab the value from the input and put it in an object. 
-    var newBurger = $("#newBurger").val().trim(); 
+    $("#submit").on("click", function(){
+        var newBurger = $("#newBurger").val().trim(); 
 
-    var newBurgerObj = {
-        burger: newBurger
-    }
-
-    console.log(newBurgerObj);
-
-
-    // Send the POST request.
-    $.ajax("/api/create", {
-        type: "POST",
-        data: newBurgerObj
-        }).then(
-        function() {
-            console.log("created new burger");
-            // Reload the page to get the updated list
-            location.reload();
+        var burgerObj = {
+            burgerName: newBurger
         }
+
+        $.ajax("/api/create", {
+            type: "POST",
+            data: burgerObj
+        }).then(
+            function(){
+                console.log("new burger was added. ");
+                location.reload();
+            }
         );
-})
+    });
+        
+
+
+
+
+});

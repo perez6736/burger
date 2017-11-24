@@ -13,8 +13,8 @@ var burger = {
     },
     // create: // create a burger
     create: function(cols, vals, cb){
-        orm.create("burgers", col, vals, function(res){
-            cd(res);
+        orm.create("burgers", cols, vals, function(res){
+            cb(res);
         });
     },
     // update: // update existing burger
