@@ -2,11 +2,7 @@
 <ol class="newBurgers">
     {{#each burgers}}
         {{#unless devoured}}
-            <li> {{burger_name}} 
-                <button class="devour" data-id="{{id}}" data-devoured="{{devoured}}">
-		            Devour
-	            </button>
-            </li>
+            {{> burgers/burger-block devour=true}}
         {{/unless}}
     {{/each}}
 </ol>
@@ -22,10 +18,10 @@
 </ol>
 
 
-<input id="newBurger" value="this is value">
+<input id="newBurger">
     Burger: 
 </input>
 
 <button type="submit" id="submit">
-    Submit
+    Add new Burger
 </button>
